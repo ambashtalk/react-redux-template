@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: node
+          image: lka12/counter-app-node
+          imagePullPolicy: Never
+
+        - name: nginx
+          image: lka12/counter-app-nginx
+          imagePullPolicy: Never
+          env:
+            - name: BASE_PATH
+              value: http://localhost
+            - name: APP_URL
+              value: http://localhost:3000
+          ports:
+            - containerPort: 3000
