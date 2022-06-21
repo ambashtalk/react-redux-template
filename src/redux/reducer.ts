@@ -25,8 +25,6 @@ export const thunkReducer = createReducer<ThunkInterface>(
   thunkState,
   (builder) => {
     builder.addCase(getPostData.fulfilled, (state, action) => {
-      console.log(action.payload);
-
       state.data = action.payload;
     });
   }

@@ -13,11 +13,14 @@ const ThunkComponent: React.FC = () => {
   };
   return (
     <div className={styles.container}>
-      <div>
+      {/* <div>
         <h1>{data.title}</h1>
         <p>{data.body}</p>
-      </div>
-      <button onClick={_onClickHandler}>Get Data</button>
+      </div> */}
+      <pre className={styles.data}>{JSON.stringify(data, null, 2)}</pre>
+      <button className={styles.btn} onClick={_onClickHandler}>
+        Get Data
+      </button>
     </div>
   );
 };

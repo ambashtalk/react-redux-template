@@ -1,4 +1,16 @@
-.container {
+div.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: bisque;
     height: 100vh;
+}
+
+pre.data {
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+button.btn {
+    align-self: center;
 }
