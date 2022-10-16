@@ -16,10 +16,24 @@ spec:
         - name: node
           image: lka12/counter-app-node
           imagePullPolicy: Never
+          # resources:
+          #   requests:
+          #     memory: "64Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "128Mi"
+          #     cpu: "250m"
 
         - name: nginx
           image: lka12/counter-app-nginx
           imagePullPolicy: Never
+          # resources:
+          #   requests:
+          #     memory: "64Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "128Mi"
+          #     cpu: "250m"
           env:
             - name: BASE_PATH
               value: http://localhost
